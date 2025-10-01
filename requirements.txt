@@ -1,0 +1,36 @@
+# Core PySpark and Data Processing
+pyspark==3.4.1
+pandas==2.0.3
+numpy==1.24.3
+
+# Database Connectors (for connecting to real databases)
+psycopg2-binary==2.9.7
+PyMySQL==1.1.0
+sqlalchemy==2.0.20
+
+# Data Formats
+pyarrow==13.0.0
+openpyxl==3.1.2
+
+# HTTP and APIs
+requests==2.31.0
+
+# Workflow and Orchestration (optional - for advanced usage)
+# apache-airflow==2.7.0
+
+# Monitoring and Logging
+prometheus-client==0.17.1
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Development Tools
+black==23.7.0
+jupyter==1.0.0
+
+# Utilities
+python-dotenv==1.0.0
+click==8.1.7
+tqdm==4.65.0
+pyyaml==6.0.1
