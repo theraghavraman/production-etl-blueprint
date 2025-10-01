@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern ETL Pipeline Architectures with PySpark & SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PrismJS for syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container flex items-center justify-between py-16">
+            <h1 class="logo">ETL Pipeline Architectures</h1>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="flex gap-16">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#code-examples">Code Examples</a></li>
+                    <li><a href="#case-study">Case Study</a></li>
+                    <li><a href="#performance">Performance Benchmarks</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <!-- Home: Hero Section -->
+        <section id="home" class="hero-section py-16">
+            <div class="flex flex-col gap-16 items-center">
+                <h2>Build Robust ETL Pipelines with PySpark, SQL, and Modern Tools</h2>
+                <p class="hero-desc">Discover the architectures, code, and best practices to power scalable, performant and reliable data pipelines for analytics, ML, and business intelligence.</p>
+                <div class="card card--intro">
+                    <div class="card__body flex flex-col gap-8">
+                        <h3>Key Components of Modern ETL:</h3>
+                        <ul class="overview-list">
+                            <li>Multiple Data Sources (SQL, NoSQL, APIs, Files)</li>
+                            <li>Processing Engines (PySpark, SQL)</li>
+                            <li>Orchestration (Airflow, Kubernetes)</li>
+                            <li>Monitoring & Logging</li>
+                            <li>Destinations (DW, DL, Dashboards, ML)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Architecture Section -->
+        <section id="architecture" class="py-16">
+            <h2>Comprehensive ETL Architecture</h2>
+            <div class="flex flex-col gap-8">
+                <div class="architecture-diagram card flex flex-col items-center">
+                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/e0f48c9c-7dad-4415-99d8-8b99e69e6e4d/b9a5c33f.png" alt="ETL Pipeline Architecture Diagram" style="max-width:100%;height:auto;margin-bottom:16px;" />
+                    <small class="diagram-caption">Comprehensive ETL Pipeline Architecture: from diverse sources, through PySpark-based processing, to data warehouse, data lake, dashboards, and ML models.</small>
+                </div>
+                <div class="flex gap-8 stack-overview">
+                    <div class="card card--stack">
+                        <div class="card__body">
+                            <h3>Sources</h3>
+                            <ul class="stack-list">
+                                <li>SQL Server, PostgreSQL</li>
+                                <li>CSV, JSON Files</li>
+                                <li>REST APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card card--stack">
+                        <div class="card__body">
+                            <h3>Processing</h3>
+                            <ul class="stack-list">
+                                <li>PySpark (Extraction/Transformation/Loading)</li>
+                                <li>Batch & Streaming</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card card--stack">
+                        <div class="card__body">
+                            <h3>Infrastructure</h3>
+                            <ul class="stack-list">
+                                <li>Kafka, Docker, Airflow</li>
+                                <li>Monitoring (Prometheus, Grafana, ELK)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card card--stack">
+                        <div class="card__body">
+                            <h3>Destinations</h3>
+                            <ul class="stack-list">
+                                <li>Data Warehouse & Data Lake</li>
+                                <li>Analytics Dashboards</li>
+                                <li>ML Models</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="technology-stack mt-8">
+                    <h3>Technology Stack Overview</h3>
+                    <div class="flex gap-16 flex-wrap">
+                        <div>
+                            <strong>Languages:</strong> Python, SQL, Scala
+                        </div>
+                        <div>
+                            <strong>Frameworks:</strong> PySpark, Apache Spark, Pandas
+                        </div>
+                        <div>
+                            <strong>Databases:</strong> PostgreSQL, SQL Server, MongoDB
+                        </div>
+                        <div>
+                            <strong>Streaming:</strong> Kafka, Pulsar
+                        </div>
+                        <div>
+                            <strong>Orchestration:</strong> Airflow, Kubernetes
+                        </div>
+                        <div>
+                            <strong>Containers:</strong> Docker, Docker Compose
+                        </div>
+                        <div>
+                            <strong>Monitoring:</strong> Prometheus, Grafana, ELK Stack
+                        </div>
+                        <div>
+                            <strong>Cloud:</strong> AWS, Azure, GCP
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Code Examples Section -->
+        <section id="code-examples" class="py-16">
+            <h2>Code Examples: End-to-End ETL Pipeline</h2>
+            <div class="flex flex-col gap-16">
+                <!-- PySpark Code Example -->
+                <div class="card">
+                    <div class="card__header flex justify-between items-center">
+                        <h3>PySpark ETL Pipeline Code</h3>
+                        <a class="btn btn--primary btn--sm" href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/295e59a7-0684-42db-9639-6a4d114cf674/f24f898b.py" download>Download .py</a>
+                    </div>
+                    <div class="card__body">
+                        <pre class="collapsible code-block" tabindex="0"><code class="language-python" id="pyspark-code"></code></pre>
+                    </div>
+                </div>
+                <!-- SQL Transformations Example -->
+                <div class="card">
+                    <div class="card__header flex justify-between items-center">
+                        <h3>SQL Transformations</h3>
+                        <button class="btn btn--outline btn--sm" id="show-sql-btn">Show Example</button>
+                    </div>
+                    <div class="card__body">
+                        <pre class="collapsible code-block hidden" tabindex="0"><code class="language-sql" id="sql-code">-- Example SQL Transformations
+SELECT customer_id, SUM(order_total) AS total_spent
+FROM sales_orders
+WHERE order_date >= '2023-01-01'
+GROUP BY customer_id
+ORDER BY total_spent DESC;
+
+-- Clean nulls and filter inactivity
+SELECT * FROM customers
+WHERE last_active >= CURRENT_DATE - INTERVAL '90 days'
+AND email IS NOT NULL;
+</code></pre>
+                    </div>
+                </div>
+                <!-- Airflow ETL DAG -->
+                <div class="card">
+                    <div class="card__header flex justify-between items-center">
+                        <h3>Airflow ETL DAG</h3>
+                        <a class="btn btn--primary btn--sm" href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/bff6ca8c-601b-49d3-94b4-7aad246c219a/8ebbbe88.py" download>Download .py</a>
+                    </div>
+                    <div class="card__body">
+                        <pre class="collapsible code-block" tabindex="0"><code class="language-python" id="airflow-code"></code></pre>
+                    </div>
+                </div>
+                <!-- Docker Config Example -->
+                <div class="card">
+                    <div class="card__header flex justify-between items-center">
+                        <h3>Docker Configuration</h3>
+                        <a class="btn btn--primary btn--sm" href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/bff6ca8c-601b-49d3-94b4-7aad246c219a/5b8b83e4.txt" download>Download .txt</a>
+                    </div>
+                    <div class="card__body">
+                        <pre class="collapsible code-block" tabindex="0"><code class="language-docker" id="docker-code"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Case Study Section -->
+        <section id="case-study" class="py-16">
+            <h2>Case Study: TechCorp Analytics</h2>
+            <div class="card mb-8">
+                <div class="card__body flex flex-col gap-4">
+                    <div class="flex gap-8"><span class="status status--info">Industry: E-commerce Analytics</span><span class="status status--warning">Data Volume: 5M/day, 2TB</span></div>
+                    <div><strong>Challenge:</strong> Migrate daily sales data from SQL Server to PostgreSQL</div>
+                    <div><strong>SLA:</strong> 2 hour processing, 99.9% accuracy</div>
+                </div>
+            </div>
+            <div class="card mb-8">
+                <div class="card__body">
+                    <ul>
+                        <li><strong>Annual Cost Savings:</strong> $50,000</li>
+                        <li><strong>Revenue Impact:</strong> $2M additional revenue</li>
+                        <li><strong>Performance Improvement:</strong> 67% faster processing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-8">
+                <div class="card__header flex justify-between items-center">
+                    <h3>Detailed Implementation Steps</h3>
+                    <a class="btn btn--primary btn--sm" href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/2370292c-1b1c-4684-8ee6-02386333d1a6/e23474b5.md" download>Download .md</a>
+                </div>
+                <div class="card__body">
+                    <pre class="collapsible code-block" tabindex="0"><code class="language-markdown" id="case-study-md"></code></pre>
+                </div>
+            </div>
+            <div class="performance-metrics-card card">
+                <div class="card__header"><h3>Performance Metrics Before & After Optimization</h3></div>
+                <div class="card__body">
+                    <div class="chart-container" style="position:relative;height:400px">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Performance Benchmarks Section -->
+        <section id="performance" class="py-16">
+            <h2>ETL Pipeline Performance Benchmarks</h2>
+            <div class="card">
+                <div class="card__body">
+                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/7cd481b6c8d3ea616c25d448a92588f6/73246a14-bba3-4b4f-8744-855c8ce8a285/89f292e8.png" alt="ETL Pipeline Performance Benchmark Chart" style="max-width:100%;height:auto;" />
+                    <small class="diagram-caption">Performance benchmarks comparing pipeline before and after optimizations across time, memory, and accuracy metrics.</small>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3>Optimization Strategies</h3>
+                <ul>
+                    <li>Partitioning and Parallelism in PySpark</li>
+                    <li>Efficient SQL Querying & Indexing</li>
+                    <li>Resource Management via Docker & Airflow</li>
+                    <li>End-to-end Monitoring & Automated Alerts</li>
+                    <li>Caching and Incremental Loads</li>
+                </ul>
+            </div>
+            <div class="mt-8">
+                <h3>Monitoring & Alerting Setup</h3>
+                <ul>
+                    <li>Prometheus & Grafana dashboards for resource metrics</li>
+                    <li>ELK Stack for log aggregation/search</li>
+                    <li>Automated Airflow alerts</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Best Practices Section -->
+        <section id="best-practices" class="py-16">
+            <h2>Best Practices for Modern ETL Pipelines</h2>
+            <div class="flex flex-col gap-16">
+                <div class="card">
+                    <div class="card__body">
+                        <ul>
+                            <li>Implement Data Quality Frameworks (expect tests, schema validation)</li>
+                            <li>Comprehensive Error Handling & Alerting</li>
+                            <li>Performance Optimization: partitioning, caching, parallelism</li>
+                            <li>Scalability via containerization, orchestration</li>
+                            <li>Security & Compliance: encryption, masking, access controls</li>
+                            <li>Monitoring & Alerting: dashboards, anomaly detection, notifications</li>
+                            <li>Automated Testing Strategies</li>
+                            <li>Maintain Documentation & Change History</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Resources Section -->
+        <section id="resources" class="py-16">
+            <h2>Resources & Further Reading</h2>
+            <div class="card">
+                <div class="card__body resources-list flex flex-col gap-4">
+                    <a href="https://spark.apache.org/docs/latest/" target="_blank">PySpark Documentation</a>
+                    <a href="https://airflow.apache.org/docs/" target="_blank">Apache Airflow Docs</a>
+                    <a href="https://docs.docker.com/" target="_blank">Docker Documentation</a>
+                    <a href="https://pandas.pydata.org/docs/" target="_blank">Pandas Documentation</a>
+                    <a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL Docs</a>
+                    <a href="https://docs.microsoft.com/en-us/sql/" target="_blank">SQL Server Docs</a>
+                    <a href="https://grafana.com/docs/" target="_blank">Grafana Documentation</a>
+                    <a href="https://prometheus.io/docs/" target="_blank">Prometheus Docs</a>
+                    <a href="https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-elastic-stack.html" target="_blank">ELK Stack Guide</a>
+                    <a href="https://github.com/topics/etl" target="_blank">ETL Community Repositories on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer py-16">
+        <div class="container flex flex-col items-center gap-8">
+            <span class="site-footer__copyright">&copy; 2025 ETL Pipeline Architectures Guide</span>
+            <div class="site-footer__extra-links flex gap-8">
+                <a href="#resources">Resources</a>
+                <a href="https://github.com/topics/etl" target="_blank">ETL on GitHub</a>
+                <a href="https://airflow.apache.org/community/" target="_blank">Airflow Community</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-docker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
