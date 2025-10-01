@@ -1,0 +1,108 @@
+{
+  "data_sources": {
+    "customers": {
+      "type": "csv",
+      "path": "sample_customers.csv",
+      "description": "Customer master data with demographics and segmentation",
+      "schema": {
+        "customer_id": "integer",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "company": "string",
+        "city": "string",
+        "country": "string",
+        "registration_date": "date",
+        "birth_date": "date",
+        "total_spent": "double",
+        "is_active": "boolean",
+        "customer_segment": "string"
+      }
+    },
+    "orders": {
+      "type": "csv",
+      "path": "sample_orders.csv",
+      "description": "Order transaction data with product and payment details",
+      "schema": {
+        "order_id": "integer",
+        "customer_id": "integer",
+        "order_date": "timestamp",
+        "product_category": "string",
+        "product_name": "string",
+        "quantity": "integer",
+        "unit_price": "double",
+        "total_amount": "double",
+        "order_status": "string",
+        "shipping_address": "string",
+        "payment_method": "string"
+      }
+    },
+    "products": {
+      "type": "json",
+      "path": "sample_products.json",
+      "description": "Product catalog with inventory and supplier information",
+      "schema": "infer"
+    },
+    "sales_analytics": {
+      "type": "csv",
+      "path": "sample_sales_analytics.csv",
+      "description": "Sales performance metrics by region and channel",
+      "schema": "infer"
+    },
+    "logs": {
+      "type": "json",
+      "path": "sample_logs.json",
+      "description": "Application logs with performance and error tracking",
+      "schema": "infer"
+    },
+    "dirty_data": {
+      "type": "csv",
+      "path": "sample_dirty_data.csv",
+      "description": "Dataset with intentional quality issues for testing",
+      "schema": "infer"
+    },
+    "streaming_events": {
+      "type": "json",
+      "path": "sample_streaming_events.json",
+      "description": "Real-time user behavior and interaction events",
+      "schema": "infer"
+    }
+  },
+  "data_quality_rules": {
+    "customers": {
+      "null_tolerance": {
+        "customer_id": 0.0,
+        "first_name": 0.05,
+        "last_name": 0.05,
+        "email": 0.1
+      },
+      "range_checks": {
+        "total_spent": {
+          "min": 0,
+          "max": 50000
+        }
+      },
+      "format_checks": {
+        "email": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+      }
+    },
+    "orders": {
+      "null_tolerance": {
+        "order_id": 0.0,
+        "customer_id": 0.0,
+        "total_amount": 0.0
+      },
+      "range_checks": {
+        "quantity": {
+          "min": 1,
+          "max": 100
+        },
+        "total_amount": {
+          "min": 0,
+          "max": 100000
+        }
+      }
+    }
+  }
+}

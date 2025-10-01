@@ -1,0 +1,81 @@
+{
+  "pipeline": {
+    "name": "comprehensive_etl_pipeline",
+    "version": "1.0.0",
+    "description": "Complete ETL pipeline with multiple data sources and transformations",
+    "author": "Data Engineering Team",
+    "created_date": "2025-09-30T21:54:39.573728"
+  },
+  "spark_config": {
+    "app_name": "Comprehensive_ETL_Pipeline",
+    "master": "local[*]",
+    "config": {
+      "spark.sql.adaptive.enabled": "true",
+      "spark.sql.adaptive.coalescePartitions.enabled": "true",
+      "spark.sql.adaptive.skewJoin.enabled": "true",
+      "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+      "spark.sql.execution.arrow.pyspark.enabled": "true",
+      "spark.sql.shuffle.partitions": "200",
+      "spark.dynamicAllocation.enabled": "true",
+      "spark.sql.adaptive.advisoryPartitionSizeInBytes": "128MB"
+    }
+  },
+  "transformations": {
+    "customer_enrichment": {
+      "calculate_age": true,
+      "segment_customers": true,
+      "standardize_phone": true,
+      "validate_email": true
+    },
+    "order_analysis": {
+      "calculate_metrics": true,
+      "flag_anomalies": true,
+      "categorize_orders": true,
+      "seasonal_analysis": true
+    },
+    "data_aggregation": {
+      "daily_sales": true,
+      "customer_lifetime_value": true,
+      "product_performance": true,
+      "regional_analysis": true
+    },
+    "data_quality": {
+      "null_checks": true,
+      "duplicate_detection": true,
+      "anomaly_detection": true,
+      "format_validation": true
+    }
+  },
+  "outputs": {
+    "processed_customers": {
+      "format": "csv",
+      "path": "output/processed_customers",
+      "partition_by": [
+        "country",
+        "customer_segment"
+      ]
+    },
+    "order_analytics": {
+      "format": "csv",
+      "path": "output/order_analytics",
+      "partition_by": [
+        "year",
+        "month"
+      ]
+    },
+    "data_quality_report": {
+      "format": "json",
+      "path": "output/data_quality_report.json"
+    },
+    "sales_dashboard_data": {
+      "format": "json",
+      "path": "output/sales_dashboard_data.json"
+    }
+  },
+  "monitoring": {
+    "enable_metrics": true,
+    "log_level": "INFO",
+    "performance_tracking": true,
+    "data_lineage": true
+  }
+}
